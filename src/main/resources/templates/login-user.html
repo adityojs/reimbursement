@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login User</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div class="login-container">
+
+      <div>
+        <!-- Show the dashboard link only for admins -->
+        <div th:if="${session.loggedIn}">
+      <!--    <a href="/dashboard">Dashboard</a>-->
+        </div>
+
+        <!-- Show other options -->
+      <!--  <a href="/reimbursement">Reimbursement</a>-->
+      <!--  <a href="/logout">Logout</a>-->
+      </div>
+      <div class="animated-title">WEBSITE REIMBURSEMENT</div>
+      <form class="login-form" action="/login-user" method="post">
+        <h2>Login User</h2>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required><br>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br>
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="mt-3">
+        <a href="/login-admin" class="text-decoration-none">Login sebagai Admin</a>
+      </div>
+
+    <div th:if="${error}" class="alert alert-danger">
+      <span th:text="${error}"></span>
+    </div>
+
+      <p th:if="${param.error}" style="color: red;">Invalid username or password</p>
+
+    </div>
+
+  </body>
+  </html>

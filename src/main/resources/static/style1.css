@@ -1,0 +1,137 @@
+/* General Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('/img/gambar.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Adjust to column layout */
+    align-items: stretch; /* Allow content to expand */
+    overflow: auto; /* Avoid hiding content */
+}
+
+
+/* Animated Hover Effect on Nav Menu */
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #34C759;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #34C759;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+/* Animated Status Badge */
+.badge {
+    animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Modal Fade-in Animation */
+.modal.fade .modal-dialog {
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* General Table Styling */
+table th, table td {
+    text-align: center;
+}
+
+/* General Table Styling */
+table th, table td {
+    text-align: center;
+    padding: 15px; /* Increase padding for better readability */
+}
+
+/* Hologram effect for the table */
+.table th, .table td {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    color: #333; /* Dark text for readability */
+    backdrop-filter: blur(5px); /* Blurs the background slightly for better text visibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for the table */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some depth to the table */
+}
+
+.table th {
+    background: rgba(255, 255, 255, 0.7); /* Slightly more opaque for header */
+    color: #333; /* Ensure header text is readable */
+}
+
+.table tr:hover {
+    background: rgba(255, 255, 255, 0.4); /* Hover effect to slightly darken rows */
+}
+
+/* Make the text in the table cells more readable */
+table td, table th {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Optional: Add shimmer effect to background */
+/*@keyframes shimmer {*/
+/*    0% {*/
+/*        background-position: -200% 0;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 200% 0;*/
+/*    }*/
+/*}*/
+
+.table th, .table td {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+
+/* Card and Button Enhancements */
+/*.btn:hover {*/
+/*    transform: scale(1.05);*/
+/*    transition: transform 0.2s ease-in-out;*/
+/*}*/
+
+.bright-heading {
+    color: #ffffff; /* A bright green color */
+    font-weight: bold;
+}

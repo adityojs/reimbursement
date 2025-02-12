@@ -1,0 +1,105 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Override Bootstrap's .container styles */
+.container {
+    max-width: 800px !important; /* Paksa lebar maksimum */
+    width: 100%; /* Agar tetap responsif */
+    margin: 15px auto;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Heading Styles */
+h2.bright-heading {
+    color: #343a40; /* Dark gray */
+    font-size: 1.25rem; /* Ukuran heading lebih kecil */
+    text-align: center;
+    margin-bottom: 10px; /* Mengurangi jarak bawah */
+}
+
+/* Form Label and Input Styles */
+.form-label {
+    color: #495057; /* Slightly dark gray */
+    font-weight: 500;
+    font-size: 0.85rem; /* Ukuran font label lebih kecil */
+}
+
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 6px; /* Padding lebih kecil dalam input */
+    font-size: 0.8rem; /* Ukuran font input lebih kecil */
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff; /* Blue focus color */
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 6px 10px; /* Ukuran tombol lebih kecil */
+    border-radius: 6px;
+    font-size: 0.8rem; /* Ukuran font tombol lebih kecil */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Navbar Styles */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 0.85rem; /* Ukuran font navbar lebih kecil */
+}
+
+.navbar-brand {
+    font-size: 1.25rem; /* Ukuran font navbar brand lebih kecil */
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.navbar-text {
+    color: #f8f9fa;
+    font-size: 0.85rem; /* Ukuran font navbar text lebih kecil */
+    margin-left: 15px;
+}
+
+/* Specific Adjustments */
+textarea.form-control {
+    resize: none;
+}
+
+select[readonly] {
+    background-color: #e9ecef;
+    pointer-events: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 8px; /* Mengurangi padding untuk layar kecil */
+    }
+
+    h2.bright-heading {
+        font-size: 1.1rem; /* Heading lebih kecil untuk layar kecil */
+    }
+}
