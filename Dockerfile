@@ -7,12 +7,14 @@ RUN mvn clean package -DskipTests
 # Gunakan OpenJDK untuk menjalankan aplikasi
 FROM openjdk:17
 WORKDIR /app
-COPY /target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
+# Salin file .jar dari tahap build
+COPY --from=build /app/target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar", "-Dserver.port=8000", "-Dserver.address=0.0.0.0"]
 
-FROM mysql:8.0
-ENV MYSQL_ROOT_USER=root
-ENV MYSQL_ROOT_PASSWORD=sadewa23
-ENV MYSQL_DATABASE=reimbursement_db
-EXPOSE 8000
-
+# Optional: Menambahkan MySQL sebagai container terpisah (tidak untuk Vercel)
+# Gunakan image MySQL dari Docker Hub
+# FROM mysql:8.0
+# ENV MYSQL_ROOT_USER=root
+# ENV MYSQL_ROOT_PASSWORD=sadewa23
+# ENV MYSQL_DATABASE=reimbursement_db
+# EXPOSE 3306
