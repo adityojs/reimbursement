@@ -7,7 +7,7 @@ RUN mvn clean package -DskipTests
 # Gunakan OpenJDK untuk menjalankan aplikasi
 FROM openjdk:17
 WORKDIR /app
-COPY --from=build /app/target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar"]
 
 FROM mysql:8.0
