@@ -9,3 +9,10 @@ FROM openjdk:17
 WORKDIR /app
 COPY --from=build /app/target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar"]
+
+FROM mysql:8.0
+ENV MYSQL_ROOT_USER=root
+ENV MYSQL_ROOT_PASSWORD=sadewa23
+ENV MYSQL_DATABASE=reimbursement_db
+EXPOSE 3306
+
