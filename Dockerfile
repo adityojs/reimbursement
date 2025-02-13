@@ -5,12 +5,12 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Gunakan OpenJDK untuk menjalankan aplikasi
-FROM openjdk:17.0.1-jdk-slim
-# WORKDIR /app
+FROM openjdk:17
+WORKDIR /app
 # Salin file .jar dari tahap build
-COPY --from=build /target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar", "-Dserver.port=8000", "-Dserver.address=0.0.0.0"]
-EXPOSE 8080
+
 
 # Optional: Menambahkan MySQL sebagai container terpisah (tidak untuk Vercel)
 # FROM mysql:8.0
