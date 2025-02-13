@@ -10,7 +10,7 @@ WORKDIR /app
 # Salin file .jar dari tahap build
 COPY --from=build /app/target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar", "-Dserver.port=8000", "-Dserver.address=0.0.0.0"]
-
+EXPOSE 8443
 
 # Optional: Menambahkan MySQL sebagai container terpisah (tidak untuk Vercel)
 # FROM mysql:8.0
