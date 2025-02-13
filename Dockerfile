@@ -9,7 +9,7 @@ FROM openjdk:17.0.1-jdk-slim
 # WORKDIR /app
 # Salin file .jar dari tahap build
 COPY --from=build /target/transaksi-reimbursement-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar", "-Dserver.port=8000", "-Dserver.address=0.0.0.0"]
+CMD ["java", "-jar", "app.jar", "-Dserver.port=8000", "-Dserver.address=0.0.0.0"]
 EXPOSE 8080
 
 # Optional: Menambahkan MySQL sebagai container terpisah (tidak untuk Vercel)
